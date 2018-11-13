@@ -67,6 +67,9 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+#VSC
+node_modules
+
 # Windows shortcuts
 *.lnk
 
