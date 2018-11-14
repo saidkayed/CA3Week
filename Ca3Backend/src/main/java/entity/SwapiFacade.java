@@ -5,6 +5,8 @@
  */
 package entity;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
