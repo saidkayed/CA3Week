@@ -30,8 +30,8 @@ export default class Swapipeople extends Component{
         <div>
             <table>
                 <thead>
-                    <tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair-Color</th>
-                    <th>Skin-Color</th><th>Eye-Color</th><th>Birthyear</th><th>Gender</th></tr>
+                    <tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th>
+                    <th>Skin Color</th><th>Eye Color</th><th>Birthyear</th><th>Gender</th></tr>
                 </thead>
                 <tbody>   
                 {this.state.peopledata.map((data) => 
@@ -43,8 +43,8 @@ export default class Swapipeople extends Component{
             </table>
              <table>
                 <thead>
-                    <tr><th>Name</th><th>rotation_period</th><th>orbital_period</th><th>diameter</th>
-                    <th>climate</th><th>gravity</th><th>terrain</th><th>surface_water</th><th>population</th></tr>
+                    <tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th>
+                    <th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th><th>Population</th></tr>
                 </thead>
                 <tbody>   
                 {this.state.planetdata.map((data) => 
@@ -56,10 +56,10 @@ export default class Swapipeople extends Component{
             </table>
              <table>
                 <thead>
-                    <tr><th>Name</th><th>model</th><th>manufacturer</th><th>cost_in_credits</th>
-                    <th>length</th><th>max_atmosphering_speed</th><th>crew</th><th>passengers</th>
-                    <th>cargo_capacity</th><th>consumables</th><th>hyperdrive_rating</th>
-                    <th>MGLT</th><th>starship_class</th></tr>
+                    <tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost In Credits</th>
+                    <th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th>
+                    <th>Cargo Capacity</th><th>Consumables</th><th>Hyperdrive Rating</th>
+                    <th>MGLT</th><th>Starship Class</th></tr>
                 </thead>
                 <tbody>   
                 {this.state.starshipdata.map((data) => 
@@ -88,9 +88,9 @@ export default class Swapipeople extends Component{
             </table>
             <table>
                 <thead>
-                    <tr><th>Name</th><th>classification</th><th>designation</th><th>average_height</th>
-                    <th>skin_colors</th><th>hair_colors</th><th>eye_colors</th><th>average_lifespan</th>
-		    <th>language</th></tr>
+                    <tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th>
+                    <th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th>
+		            <th>Language</th></tr>
                 </thead>
                 <tbody>   
                 {this.state.speciesedata.map((data) => 
