@@ -1,4 +1,4 @@
-const URL = "http://localhost:8084/jwtbackend";
+const URL = "http://localhost:8080/jwtbackend";
 
 
 
@@ -64,8 +64,20 @@ return fetch(URL + "/api/swapi/people",option)
   }
   fetchSwapiPlanets = () =>{
     const option = this.makeOptions("GET",true);
-return fetch(URL + "/api/swapi/Planets",option).then(handleHttpErrors);
+return fetch(URL + "/api/swapi/planets",option).then(res => res.json(),handleHttpErrors);
   }
+fetchSwapiStartships = () =>{
+  const option = this.makeOptions("GET",true);
+return fetch(URL + "/api/swapi/starships",option).then(res => res.json(),handleHttpErrors);
+}
+fetchSwapiVehicles = () =>{
+  const option = this.makeOptions("GET",true);
+return fetch(URL + "/api/swapi/vehicles",option).then(res => res.json(),handleHttpErrors);
+}
+fetchSwapispecies = () =>{
+  const option = this.makeOptions("GET",true);
+return fetch(URL + "/api/swapi/species",option).then(res => res.json(),handleHttpErrors);
+}
   
  
 }
