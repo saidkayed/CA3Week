@@ -55,12 +55,11 @@ export default class Swapipeople extends Component{
                 )}
                 </tbody>
             </table>
-
              <table>
                 <thead>
                     <tr><th>Name</th><th>model</th><th>manufacturer</th><th>cost_in_credits</th>
                     <th>length</th><th>max_atmosphering_speed</th><th>crew</th><th>passengers</th>
-                    <th>cargo_capacity</th> <th>consumables</th> <th>hyperdrive_rating</th>
+                    <th>cargo_capacity</th> <th>consumables</th><th>hyperdrive_rating</th>
                     <th>MGLT</th><th>starship_class</th></tr>
                 </thead>
                 <tbody>   
@@ -73,7 +72,6 @@ export default class Swapipeople extends Component{
                 )}
                 </tbody>
             </table>
-
             <table>
                 <thead>
                     <tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost</th>
@@ -89,7 +87,6 @@ export default class Swapipeople extends Component{
                 )}
                 </tbody>
             </table>
-
             <table>
                 <thead>
                     <tr><th>Name</th><th>classification</th><th>designation</th><th>average_height</th>
@@ -104,10 +101,7 @@ export default class Swapipeople extends Component{
                 )}
                 </tbody>
             </table>
-            
         </div>
-
-        
     )
     }
 }
