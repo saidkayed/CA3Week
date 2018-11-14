@@ -17,7 +17,7 @@ import javax.ws.rs.core.SecurityContext;
  * @author lam@cphbusiness.dk
  */
 @Path("info")
-public class DemoResource {
+public class LoginResource {
 
     @Context
     private UriInfo context;

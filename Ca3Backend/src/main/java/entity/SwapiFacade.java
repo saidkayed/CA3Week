@@ -34,4 +34,63 @@ public class SwapiFacade {
     scan.close();
     return jsonStr;
   }
+    
+    public String getSwapiPlanets() throws ProtocolException, MalformedURLException, IOException{
+    URL url = new URL("https://swapi.co/api/planets/");
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("GET");
+    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+    con.setRequestProperty("User-Agent", "server");
+    Scanner scan = new Scanner(con.getInputStream());
+    String jsonStr = null;
+    if (scan.hasNext()) {
+      jsonStr = scan.nextLine();
+    }
+    scan.close();
+    return jsonStr;
+    }
+    
+    public String getSwapiStarships() throws ProtocolException, MalformedURLException, IOException{
+    URL url = new URL("https://swapi.co/api/starships/");
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("GET");
+    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+    con.setRequestProperty("User-Agent", "server");
+    Scanner scan = new Scanner(con.getInputStream());
+    String jsonStr = null;
+    if (scan.hasNext()) {
+      jsonStr = scan.nextLine();
+    }
+    scan.close();
+    return jsonStr;
+  }
+    public String getSwapiVehicles() throws ProtocolException, MalformedURLException, IOException{
+    URL url = new URL("https://swapi.co/api/vehicles/");
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("GET");
+    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+    con.setRequestProperty("User-Agent", "server");
+    Scanner scan = new Scanner(con.getInputStream());
+    String jsonStr = null;
+    if (scan.hasNext()) {
+      jsonStr = scan.nextLine();
+    }
+    scan.close();
+    return jsonStr;
+  }
+    
+    public String getSwapiSpecies() throws ProtocolException, MalformedURLException, IOException{
+    URL url = new URL("https://swapi.co/api/species/");
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("GET");
+    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+    con.setRequestProperty("User-Agent", "server");
+    Scanner scan = new Scanner(con.getInputStream());
+    String jsonStr = null;
+    if (scan.hasNext()) {
+      jsonStr = scan.nextLine();
+    }
+    scan.close();
+    return jsonStr;
+  }
 }

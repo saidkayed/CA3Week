@@ -32,10 +32,6 @@ public class SwapiResource {
     public SwapiResource() {
     }
 
-    /**
-     * Retrieves representation of an instance of rest.SwapiResource
-     * @return an instance of java.lang.String
-     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("people")
@@ -43,12 +39,32 @@ public class SwapiResource {
         return sf.getSwapiPeople();
     }
 
-    /**
-     * PUT method for updating or creating an instance of SwapiResource
-     * @param content representation for the resource
-     */
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("planets")
+    public String getSwapiPlanets() throws MalformedURLException, IOException {
+        return sf.getSwapiPlanets();
     }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("starships")
+    public String getSwapiStarships() throws MalformedURLException, IOException {
+        return sf.getSwapiStarships();
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("vehicles")
+    public String getSwapiVehicles() throws MalformedURLException, IOException {
+        return sf.getSwapiVehicles();
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("species")
+    public String getSwapiFilms() throws MalformedURLException, IOException {
+        return sf.getSwapiSpecies();
+    }
+    
 }
