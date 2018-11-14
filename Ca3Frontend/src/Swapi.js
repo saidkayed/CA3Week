@@ -8,8 +8,8 @@ export default class Swapipeople extends Component{
 
     }
     async componentDidMount (){
-    const peps = await fetch("http://localhost:8080/jwtbackend/api/swapi/people").then(res =>res.json());
-   //    console.log(this.state.dataFromServer);
+    const peps = await facade.fetchSwapiPeople();
+
    this.state.dataFromServer.push(peps);
    this.setState({dataFromServer:this.state.dataFromServer})
    console.log(this.state.dataFromServer);

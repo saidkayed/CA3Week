@@ -59,7 +59,8 @@ class ApiFacade {
   }
   fetchSwapiPeople = () =>{
     const option = this.makeOptions("GET",true);
-return fetch(URL + "/api/swapi/people",option).then(handleHttpErrors);
+return fetch(URL + "/api/swapi/people",option)
+.then(res =>res.json(), handleHttpErrors)
   }
   fetchSwapiPlanets = () =>{
     const option = this.makeOptions("GET",true);
