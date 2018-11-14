@@ -1,15 +1,24 @@
 package utils;
 
 import entity.Role;
+import entity.SwapiFacade;
 import entity.User;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
 public class SetupTestUsers {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws MalformedURLException, IOException {
 
     EntityManager em = Persistence.createEntityManagerFactory("pu").createEntityManager();
+    
+    SwapiFacade sf = new SwapiFacade();
+    
+    String json = sf.getSwapiPeople();
+      System.out.println(json);
+    
     
     // IMPORTAAAAAAAAAANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // This breaks one of the MOST fundamental security rules in that it ships with default users and passwords
@@ -17,7 +26,7 @@ public class SetupTestUsers {
     
    // throw new UnsupportedOperationException("REMOVE THIS LINE, WHEN YOU HAVE READ WARNING");
     
-    
+    /*
     em.getTransaction().begin();
     Role userRole = new Role("user");
     Role adminRole = new Role("admin");
@@ -38,7 +47,7 @@ public class SetupTestUsers {
     System.out.println("Testing user with OK password: " + user.verifyPassword("test"));
     System.out.println("Testing user with wrong password: " + user.verifyPassword("test1"));
     System.out.println("Created TEST Users");
-   
+   */
   }
 
 }
