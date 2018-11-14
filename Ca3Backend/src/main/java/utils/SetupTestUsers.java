@@ -26,7 +26,7 @@ public class SetupTestUsers {
     
    // throw new UnsupportedOperationException("REMOVE THIS LINE, WHEN YOU HAVE READ WARNING");
     
-    /*
+    
     em.getTransaction().begin();
     Role userRole = new Role("user");
     Role adminRole = new Role("admin");
@@ -47,7 +47,7 @@ public class SetupTestUsers {
     System.out.println("Testing user with OK password: " + user.verifyPassword("test"));
     System.out.println("Testing user with wrong password: " + user.verifyPassword("test1"));
     System.out.println("Created TEST Users");
-   */
+   
   }
 
 }

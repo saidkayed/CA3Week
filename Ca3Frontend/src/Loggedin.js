@@ -4,6 +4,7 @@ import facade from "./apiFacade";
 import Roleendpoint from "./Roleendpoint";
 import Home from "./Home";
 import "./App.css";
+import swapi from "./Swapi";
 
 
 
@@ -17,6 +18,7 @@ export default class LoggedIn extends Component {
             facade.fetchAdminData().then(res => this.setState({ dataFromServer: res }))
         } else {
             facade.fetchData().then(res => this.setState({ dataFromServer: res }));
+
         }
     }
     render() {
@@ -31,7 +33,7 @@ export default class LoggedIn extends Component {
                             <NavLink to="/Roleendpoint">Role Endpoint</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/topics">Topics</NavLink>
+                            <NavLink to="/Swapi">Swapi</NavLink>
                         </li>
                         <li id="logout">
                         <button onClick={this.props.logout}>Logout</button>
@@ -40,9 +42,9 @@ export default class LoggedIn extends Component {
                     <Route exact path="/"
                     render={(props) => <Home {...props} user={this.props.username} />} />
                     <Route path="/Roleendpoint" 
-                    render={(props) => <Roleendpoint {...props} data={this.state.dataFromServer} />}
-                    />
-                    <Route path="/topics"  />
+                    render={(props) => <Roleendpoint {...props} data={this.state.dataFromServer} />}/>
+                    <Route path="/Swapi" component={swapi} />
+                   
                 </div>
             </Router>
         )

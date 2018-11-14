@@ -1,4 +1,4 @@
-const URL = "http://localhost:8084/jwtbackend";
+const URL = "http://localhost:8080/jwtbackend";
 
 
 
@@ -57,6 +57,15 @@ class ApiFacade {
     const options = this.makeOptions("GET",true); //True add's the token
     return fetch(URL + "/api/info/admin", options).then(handleHttpErrors);
   }
+  fetchSwapiPeople = () =>{
+    const option = this.makeOptions("GET",true);
+return fetch(URL + "/api/swapi/people",option).then(handleHttpErrors);
+  }
+  fetchSwapiPlanets = () =>{
+    const option = this.makeOptions("GET",true);
+return fetch(URL + "/api/swapi/Planets",option).then(handleHttpErrors);
+  }
+  
  
 }
 
