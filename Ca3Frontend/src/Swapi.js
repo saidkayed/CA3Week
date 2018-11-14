@@ -48,7 +48,7 @@ export default class Swapipeople extends Component{
                 </thead>
                 <tbody>   
                 {this.state.planetdata.map((data) => 
-                    <tr key={data.name}><td>{data.rotation_period}</td><td>{data.orbital_period}</td><td>{data.diameter}</td>
+                    <tr key={data.name}><td>{data.name}{data.rotation_period}</td><td>{data.orbital_period}</td><td>{data.diameter}</td>
                     <td>{data.climate}</td><td>{data.gravity}</td><td>{data.terrain}</td><td>{data.surface_water}</td><td>{data.population}</td>
                     <td>{data.birth_year}</td><td>{data.gender}</td></tr>
                 )}
@@ -64,7 +64,7 @@ export default class Swapipeople extends Component{
                 </thead>
                 <tbody>   
                 {this.state.starshipdata.map((data) => 
-                    <tr key={data.name}><td>{data.model}</td><td>{data.manufacturer}</td><td>{data.cost_in_credits}</td>
+                    <tr key={data.name}><td>{data.name}</td><td>{data.model}</td><td>{data.manufacturer}</td><td>{data.cost_in_credits}</td>
                     <td>{data.length}</td><td>{data.max_atmosphering_speed}</td><td>{data.crew}</td>
                     <td>{data.passengers}</td><td>{data.cargo_capacity}</td>
                     <td>{data.consumables}</td><td>{data.hyperdrive_rating}</td><td>{data.MGLT}</td>
