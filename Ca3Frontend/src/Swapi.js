@@ -5,7 +5,7 @@ import "./table.css"
 export default class Swapipeople extends Component {
     constructor(props) {
         super(props);
-        this.state = { peopledata: [], planetdata: [], starshipdata: [], vehicledata: [], speciesedata: [] };
+        this.state = { peopledata: [], planetdata: [], starshipdata: [], vehicledata: [], speciesdata: [] };
 
     }
     async componentDidMount() {
@@ -23,7 +23,7 @@ export default class Swapipeople extends Component {
             planetdata: planets.results,
             starshipdata: starships.results,
             vehicledata: vehicles.results,
-            speciesedata: species.results
+            speciesdata: species.results
         })
 
     }
@@ -31,6 +31,7 @@ export default class Swapipeople extends Component {
     render() {
         return (
             <div>
+                <h3>People</h3>
                 <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th>
@@ -44,6 +45,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
+                <h3>Planets</h3>
                 <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th>
@@ -51,12 +53,13 @@ export default class Swapipeople extends Component {
                     </thead>
                     <tbody>
                         {this.state.planetdata.map((data) =>
-                            <tr key={data.name}><td>{data.name}{data.rotation_period}</td><td>{data.orbital_period}</td><td>{data.diameter}</td>
+                            <tr key={data.name}><td>{data.name}</td><td>{data.rotation_period}</td><td>{data.orbital_period}</td><td>{data.diameter}</td>
                                 <td>{data.climate}</td><td>{data.gravity}</td><td>{data.terrain}</td><td>{data.surface_water}</td><td>{data.population}</td>
-                                <td>{data.birth_year}</td><td>{data.gender}</td></tr>
+                                </tr>
                         )}
                     </tbody>
                 </table>
+                <h3>Starships</h3>
                 <table id="table">
                     <thead>
 
@@ -75,6 +78,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
+                <h3>Vehicles</h3>
                 <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost</th>
@@ -90,6 +94,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
+                <h3>Species</h3>
                 <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th>
@@ -97,7 +102,7 @@ export default class Swapipeople extends Component {
                             <th>Language</th></tr>
                     </thead>
                     <tbody>
-                        {this.state.speciesedata.map((data) =>
+                        {this.state.speciesdata.map((data) =>
                             <tr key={data.name}><td>{data.name}</td><td>{data.classification}</td><td>{data.designation}</td><td>{data.average_height}</td>
                                 <td>{data.skin_colors}</td><td>{data.hair_colors}</td><td>{data.eye_colors}</td><td>{data.average_lifespan}</td>
                                 <td>{data.language}</td></tr>
