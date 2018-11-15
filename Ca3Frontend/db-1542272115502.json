@@ -2,22 +2,14 @@
   "api": [
     {
       "id": 0,
-<<<<<<< HEAD
       "gender": "female",
       "firstName": "Malike",
       "lastName": "Skov",
       "email": "malike54@somewhere.dk"
-=======
-      "gender": "male",
-      "firstName": "Tezeu",
-      "lastName": "Klausen",
-      "email": "tezeu96@somewhere.dk"
->>>>>>> 20c598f120025de920820ef2b1f8b8af1d0e97fe
     },
     {
       "id": 1,
       "gender": "male",
-<<<<<<< HEAD
       "firstName": "Ener",
       "lastName": "Hansen",
       "email": "ener32@somewhere.dk"
@@ -28,23 +20,10 @@
       "firstName": "Laja",
       "lastName": "Damgård",
       "email": "laja11@somewhere.dk"
-=======
-      "firstName": "Zaydan",
-      "lastName": "Andreassen",
-      "email": "zaydan22@somewhere.dk"
-    },
-    {
-      "id": 2,
-      "gender": "male",
-      "firstName": "Astralos",
-      "lastName": "Lauridsen",
-      "email": "astralos33@somewhere.dk"
->>>>>>> 20c598f120025de920820ef2b1f8b8af1d0e97fe
     },
     {
       "id": 3,
       "gender": "female",
-<<<<<<< HEAD
       "firstName": "Mariya",
       "lastName": "Kjær",
       "email": "mariya98@somewhere.dk"
@@ -14020,18 +13999,6 @@
       "firstName": "Katri",
       "lastName": "Kjær",
       "email": "katri96@somewhere.dk"
-=======
-      "firstName": "Safio",
-      "lastName": "Bjerre",
-      "email": "safio58@somewhere.dk"
-    },
-    {
-      "id": 4,
-      "gender": "female",
-      "firstName": "Cazja",
-      "lastName": "Brodersen",
-      "email": "cazja17@somewhere.dk"
->>>>>>> 20c598f120025de920820ef2b1f8b8af1d0e97fe
     }
   ]
 }

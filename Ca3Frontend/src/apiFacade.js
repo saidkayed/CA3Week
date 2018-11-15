@@ -1,5 +1,8 @@
 const URL = "http://localhost:8084/jwtbackend";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 654acc565430a34d6dccc0bed5d9930566be22cf
 
 
 
