@@ -11,9 +11,7 @@ export default class pagination extends Component {
         const peps = await facade.fetch_dummie_data();
 
 
-        this.setState = { pagination_data: peps }
-        console.log(peps);
-        console.log(peps.gender);
+        this.setState({ pagination_data: peps })
     }
     render() {
         return (
@@ -22,21 +20,19 @@ export default class pagination extends Component {
                 <table id="table">
                     <thead>
                         <tr>
-                            <th>gender</th>
+                            <th>Id</th><th>Gender</th><th>First Name</th><th>Last Name</th><th>Email</th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.pagination_data.map((data) =>
                             <tr key={data.id}>
-                                <td> {this.state.gender}</td>
-
+                                <td>{data.id}</td><td>{data.gender}</td><td>{data.firstName}</td>
+                                <td>{data.lastName}</td><td>{data.email}</td>
                             </tr>
                         )}
                     </tbody>
                 </table>
-
-
-
+               
             </div>
         )
     }
