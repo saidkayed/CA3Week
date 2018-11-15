@@ -39,7 +39,7 @@ public class SwapiResource {
         return sf.getSwapiPeople();
     }
 
-    @GET
+    @GET    
     @Produces(MediaType.APPLICATION_JSON)
     @Path("planets")
     public String getSwapiPlanets() throws MalformedURLException, IOException {
