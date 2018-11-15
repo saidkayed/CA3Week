@@ -6,6 +6,9 @@
 package rest;
 
 import com.mysql.fabric.Response;
+import entity.PaginationFacade;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -28,11 +31,16 @@ public class PaginationResource {
     @Context
     private UriInfo context;
 
+    PaginationFacade pf = new PaginationFacade();
     /**
      * Creates a new instance of PaginationResource
      */
     public PaginationResource() {
     }
 
-    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getSwapiPeople() throws MalformedURLException, IOException {
+        return pf.getDummyData();
+    }
 }
