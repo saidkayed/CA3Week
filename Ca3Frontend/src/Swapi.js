@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import facade from "./apiFacade";
+import "./table.css"
 
 export default class Swapipeople extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export default class Swapipeople extends Component {
     render() {
         return (
             <div>
-                <table>
+                <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th>
                             <th>Skin Color</th><th>Eye Color</th><th>Birthyear</th><th>Gender</th></tr>
@@ -43,7 +44,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
-                <table>
+                <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th>
                             <th>Climate</th><th>Gravity</th><th>Terrain</th><th>Surface Water</th><th>Population</th></tr>
@@ -56,7 +57,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
-                <table>
+                <table id="table">
                     <thead>
 
                         <tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost In Credits</th>
@@ -74,7 +75,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
-                <table>
+                <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost</th>
                             <th>Length</th><th>Max Atmosphering Speed</th><th>Crew</th><th>Passengers</th>
@@ -89,7 +90,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
-                <table>
+                <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th>
                             <th>Skin Colors</th><th>Hair Colors</th><th>Eye Colors</th><th>Average Lifespan</th>
