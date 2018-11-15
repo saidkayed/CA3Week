@@ -1,12 +1,6 @@
 import React, { Component } from "react"
-import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 
 export default class LogIn extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-
 
   login = (evt) => {
     evt.preventDefault();

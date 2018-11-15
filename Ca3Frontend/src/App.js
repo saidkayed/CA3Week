@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import facade from "./apiFacade";
 import LoggedIn from "./Loggedin";
 import LogIn from "./Login";
