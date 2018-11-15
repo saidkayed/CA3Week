@@ -39,7 +39,7 @@ public class PaginationResource {
     }
 
     @GET
-    @Produces(MediaType.TEXT_HTML)
+    @Produces(MediaType.APPLICATION_JSON)
     public String getDummyData() throws MalformedURLException, IOException {
         return pf.getDummyData();
     }
