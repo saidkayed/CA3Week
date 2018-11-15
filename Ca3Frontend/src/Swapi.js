@@ -19,7 +19,7 @@ export default class Swapipeople extends Component {
 
 
         this.setState({
-            peopledata: peps.results,
+            peopledata: peps,
             planetdata: planets.results,
             starshipdata: starships.results,
             vehicledata: vehicles.results,

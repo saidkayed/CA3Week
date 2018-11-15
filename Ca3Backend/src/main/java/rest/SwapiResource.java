@@ -6,6 +6,7 @@
 package rest;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import entity.SwapiFacade;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -35,54 +36,43 @@ public class SwapiResource {
 
     @Context
     private UriInfo context;
+    
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    SwapiFacade sf = new SwapiFacade(1);
+    //SwapiFacade sf = new SwapiFacade(1);
     public SwapiResource() {
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("people")
-    public String getSwapiPeople() throws MalformedURLException, IOException {
-        List<String> mylist = new ArrayList();
+    public String getSwapiPeople() throws MalformedURLException, IOException, InterruptedException, ExecutionException {
+        
         
         ExecutorService executor = Executors.newFixedThreadPool(5);
         List<Future<String>> list = new ArrayList();
         for(int i = 1; i < 6; i++){
-            Callable<String> callable = new SwapiFacade(i);
+            Callable<String> callable = new SwapiFacade("https://swapi.co/api/people/",i);
+            System.out.println("hej");
+            System.out.println(callable);
             Future<String> future = executor.submit(callable);
             list.add(future);
         }
-        for (Future<String> fut: list){
-            try{
-                mylist.add(fut.get());
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            }
-        executor.shutdown();
-        }
-        return new Gson().toJson(mylist);
-    }
         
-    }
-    
-    /* ExecutorService executor = Executors.newFixedThreadPool(5);
-        List<Future<String>> list = new ArrayList();
-        
-        for(int i = 1; i < 6; i++){
-            Callable<String> callable = new SwapiFacade(i);
-            Future<String> future = executor.submit(callable);
-            list.add(future);
-        }
-        for (Future<String> fut: list){
-            try{
-                System.out.println(fut.get());
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
+        StringBuilder builder = new StringBuilder();
+        builder.append('{');
+        for (int i = 0; i < list.size(); i++) {
+            String result = list.get(i).get();
+                builder.append(result);
+                if(i < list.size() -1){
+                    builder.append(",");
             }
-        executor.shutdown();
-    }*/
-
+            
+        }
+        builder.append('}');
+        return builder.toString();
+    }
+       /* 
     @GET    
     @Produces(MediaType.APPLICATION_JSON)
     @Path("planets")
@@ -110,5 +100,5 @@ public class SwapiResource {
     public String getSwapiFilms() throws MalformedURLException, IOException {
         return sf.getSwapiSpecies();
     }
-    
+    */
 }

@@ -21,129 +21,119 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-
 /**
  *
  * @author tobbe
  */
-public class SwapiFacade implements Callable {
-    
-    int id;
-    
-    public SwapiFacade(int id){
-        this.id = id;
-    }
-    
-    public String getSwapiPeople(int id) throws ProtocolException, MalformedURLException, IOException{
-    URL url = new URL("https://swapi.co/api/people/" + id);
-    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-    con.setRequestMethod("GET");
-    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
-    con.setRequestProperty("User-Agent", "server");
-    Scanner scan = new Scanner(con.getInputStream());
-    String jsonStr = null;
-    if (scan.hasNext()) {
-      jsonStr = scan.nextLine();
-    }
-    scan.close();
-    return jsonStr;
-  }
-    
-    public String getSwapiPlanets() throws ProtocolException, MalformedURLException, IOException{
-    URL url = new URL("https://swapi.co/api/planets/");
-    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-    con.setRequestMethod("GET");
-    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
-    con.setRequestProperty("User-Agent", "server");
-    Scanner scan = new Scanner(con.getInputStream());
-    String jsonStr = null;
-    if (scan.hasNext()) {
-      jsonStr = scan.nextLine();
-    }
-    scan.close();
-    return jsonStr;
-    }
-    
-    public String getSwapiStarships() throws ProtocolException, MalformedURLException, IOException{
-    URL url = new URL("https://swapi.co/api/starships/");
-    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-    con.setRequestMethod("GET");
-    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
-    con.setRequestProperty("User-Agent", "server");
-    Scanner scan = new Scanner(con.getInputStream());
-    String jsonStr = null;
-    if (scan.hasNext()) {
-      jsonStr = scan.nextLine();
-    }
-    scan.close();
-    return jsonStr;
-  }
-    public String getSwapiVehicles() throws ProtocolException, MalformedURLException, IOException{
-    URL url = new URL("https://swapi.co/api/vehicles/");
-    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-    con.setRequestMethod("GET");
-    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
-    con.setRequestProperty("User-Agent", "server");
-    Scanner scan = new Scanner(con.getInputStream());
-    String jsonStr = null;
-    if (scan.hasNext()) {
-      jsonStr = scan.nextLine();
-    }
-    scan.close();
-    return jsonStr;
-  }
-    
-    public String getSwapiSpecies() throws ProtocolException, MalformedURLException, IOException{
-    URL url = new URL("https://swapi.co/api/species/");
-    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-    con.setRequestMethod("GET");
-    con.setRequestProperty("Accept", "application/json;charset=UTF-8");
-    con.setRequestProperty("User-Agent", "server");
-    Scanner scan = new Scanner(con.getInputStream());
-    String jsonStr = null;
-    if (scan.hasNext()) {
-      jsonStr = scan.nextLine();
-    }
-    scan.close();
-    return jsonStr;
-  }
-    
+public class SwapiFacade implements Callable<String> {
 
+    public int id;
+    public String url;
     
+    public SwapiFacade(String url, int id) {
+        this.url = url;
+        this.id = id;
+        System.out.println(id);
+    }
     
     @Override
     public String call() throws Exception {
-        switch(id){
-            case 1: return getSwapiPeople(id);
-            case 2: return getSwapiPeople(id);
-            case 3: return getSwapiPeople(id);
-            case 4: return getSwapiPeople(id);
-            default: return getSwapiPeople(id);
-        }
-        
+        return getSwapiPeople(url, id);
+       
         
     }
+        
+        /*switch (id) {
+            case 1:
+                return getSwapiPeople(id);
+            case 2:
+                return getSwapiPeople(id);
+            case 3:
+                return getSwapiPeople(id);
+            case 4:
+                return getSwapiPeople(id);
+            default:
+                return getSwapiPeople(id);
+        }*/
+
+
+    public String getSwapiPeople(String urlString, int id) throws ProtocolException, MalformedURLException, IOException {
+        URL url = new URL(urlString + id);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+        con.setRequestProperty("User-Agent", "server");
+        Scanner scan = new Scanner(con.getInputStream());
+        String jsonStr = null;
+        if (scan.hasNext()) {
+            jsonStr = scan.nextLine();
+        }
+        scan.close();
+        return jsonStr;
+    }
+
+    public String getSwapiPlanets() throws ProtocolException, MalformedURLException, IOException {
+        URL url = new URL("https://swapi.co/api/planets/");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+        con.setRequestProperty("User-Agent", "server");
+        Scanner scan = new Scanner(con.getInputStream());
+        String jsonStr = null;
+        if (scan.hasNext()) {
+            jsonStr = scan.nextLine();
+        }
+        scan.close();
+        return jsonStr;
+    }
+
+    public String getSwapiStarships() throws ProtocolException, MalformedURLException, IOException {
+        URL url = new URL("https://swapi.co/api/starships/");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+        con.setRequestProperty("User-Agent", "server");
+        Scanner scan = new Scanner(con.getInputStream());
+        String jsonStr = null;
+        if (scan.hasNext()) {
+            jsonStr = scan.nextLine();
+        }
+        scan.close();
+        return jsonStr;
+    }
+
+    public String getSwapiVehicles() throws ProtocolException, MalformedURLException, IOException {
+        URL url = new URL("https://swapi.co/api/vehicles/");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+        con.setRequestProperty("User-Agent", "server");
+        Scanner scan = new Scanner(con.getInputStream());
+        String jsonStr = null;
+        if (scan.hasNext()) {
+            jsonStr = scan.nextLine();
+        }
+        scan.close();
+        return jsonStr;
+    }
+
+    public String getSwapiSpecies() throws ProtocolException, MalformedURLException, IOException {
+        URL url = new URL("https://swapi.co/api/species/");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+        con.setRequestProperty("User-Agent", "server");
+        Scanner scan = new Scanner(con.getInputStream());
+        String jsonStr = null;
+        if (scan.hasNext()) {
+            jsonStr = scan.nextLine();
+        }
+        scan.close();
+        return jsonStr;
+    }
+
     
-    public static void main(String[] args){
-        ExecutorService executor = Executors.newFixedThreadPool(5);
-        List<Future<String>> list = new ArrayList();
-        
-        for(int i = 1; i < 6; i++){
-            Callable<String> callable = new SwapiFacade(i);
-            Future<String> future = executor.submit(callable);
-            list.add(future);
-        }
-        for (Future<String> fut: list){
-            try{
-                System.out.println(fut.get());
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            }
-        executor.shutdown();
+
+    
     }
-}
-}
-
-
-
 
