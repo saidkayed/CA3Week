@@ -34,8 +34,8 @@ public class SwapiFacade implements Callable {
         this.id = id;
     }
     
-    public String getSwapiPeople() throws ProtocolException, MalformedURLException, IOException{
-    URL url = new URL("https://swapi.co/api/people/");
+    public String getSwapiPeople(int id) throws ProtocolException, MalformedURLException, IOException{
+    URL url = new URL("https://swapi.co/api/people/" + id);
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
     con.setRequestMethod("GET");
     con.setRequestProperty("Accept", "application/json;charset=UTF-8");
@@ -114,11 +114,11 @@ public class SwapiFacade implements Callable {
     @Override
     public String call() throws Exception {
         switch(id){
-            case 1: return getSwapiPlanets();
-            case 2: return getSwapiStarships();
-            case 3: return getSwapiVehicles();
-            case 4: return getSwapiSpecies();
-            default: return getSwapiPeople();
+            case 1: return getSwapiPeople(id);
+            case 2: return getSwapiPeople(id);
+            case 3: return getSwapiPeople(id);
+            case 4: return getSwapiPeople(id);
+            default: return getSwapiPeople(id);
         }
         
         
@@ -128,7 +128,7 @@ public class SwapiFacade implements Callable {
         ExecutorService executor = Executors.newFixedThreadPool(5);
         List<Future<String>> list = new ArrayList();
         
-        for(int i = 0; i < 5; i++){
+        for(int i = 1; i < 6; i++){
             Callable<String> callable = new SwapiFacade(i);
             Future<String> future = executor.submit(callable);
             list.add(future);
