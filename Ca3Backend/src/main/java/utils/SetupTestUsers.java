@@ -6,6 +6,7 @@ import entity.SwapiFacade;
 import entity.User;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
@@ -15,11 +16,12 @@ public class SetupTestUsers {
 
     //EntityManager em = Persistence.createEntityManagerFactory("pu").createEntityManager();
     
-    PaginationFacade sf = new PaginationFacade();
+    SwapiFacade sf = new SwapiFacade();
     
-    String json = sf.getDummyData();
+    ArrayList<String> json = sf.getAllSwapi();
+    
       System.out.println(json);
-    
+            
     
     // IMPORTAAAAAAAAAANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // This breaks one of the MOST fundamental security rules in that it ships with default users and passwords
