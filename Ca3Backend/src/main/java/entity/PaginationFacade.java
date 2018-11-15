@@ -19,15 +19,15 @@ import java.util.Scanner;
 public class PaginationFacade {
     
     public String getDummyData() throws ProtocolException, MalformedURLException, IOException{
-    URL url = new URL("http:/localhost:1234/api/");
+    URL url = new URL("http://localhost:1234/api/");
     HttpURLConnection con = (HttpURLConnection) url.openConnection();
     con.setRequestMethod("GET");
     con.setRequestProperty("Accept", "application/json;charset=UTF-8");
     con.setRequestProperty("User-Agent", "server");
     Scanner scan = new Scanner(con.getInputStream());
-    String jsonStr = null;
-    if (scan.hasNext()) {
-      jsonStr = scan.nextLine();
+    String jsonStr = "";
+    while (scan.hasNext()) {
+      jsonStr += scan.nextLine();
     }
     scan.close();
     return jsonStr;

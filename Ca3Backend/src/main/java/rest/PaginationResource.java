@@ -39,8 +39,8 @@ public class PaginationResource {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getSwapiPeople() throws MalformedURLException, IOException {
+    @Produces(MediaType.TEXT_HTML)
+    public String getDummyData() throws MalformedURLException, IOException {
         return pf.getDummyData();
     }
 }
