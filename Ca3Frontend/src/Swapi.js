@@ -31,7 +31,7 @@ export default class Swapipeople extends Component {
     render() {
         return (
             <div>
-                <h3>People</h3>
+                <h3 align="center">People</h3>
                 <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Height</th><th>Mass</th><th>Hair Color</th>
@@ -45,7 +45,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
-                <h3>Planets</h3>
+                <h3 align="center">Planets</h3>
                 <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Rotation Period</th><th>Orbital Period</th><th>Diameter</th>
@@ -59,7 +59,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
-                <h3>Starships</h3>
+                <h3 align="center">Starships</h3>
                 <table id="table">
                     <thead>
 
@@ -78,7 +78,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
-                <h3>Vehicles</h3>
+                <h3 align="center">Vehicles</h3>
                 <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Model</th><th>Manufacturer</th><th>Cost</th>
@@ -94,7 +94,7 @@ export default class Swapipeople extends Component {
                         )}
                     </tbody>
                 </table>
-                <h3>Species</h3>
+                <h3 align="center">Species</h3>
                 <table id="table">
                     <thead>
                         <tr><th>Name</th><th>Classification</th><th>Designation</th><th>Average Height</th>
