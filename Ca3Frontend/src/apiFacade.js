@@ -1,4 +1,5 @@
-const URL = "http://localhost:8084/jwtbackend";
+const URL = "http://localhost:8080/jwtbackend";
+
 
 
 
@@ -78,6 +79,11 @@ fetchSwapispecies = () =>{
   const option = this.makeOptions("GET",true);
 return fetch(URL + "/api/swapi/species",option).then(res => res.json(),handleHttpErrors);
 }
+fetch_dummie_data = () =>{
+  const option = this.makeOptions("GET",true);
+return fetch(URL + "/api/pagination",option).then(res => res.json(),handleHttpErrors);
+}
+
   
  
 }

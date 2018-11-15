@@ -5,6 +5,7 @@ import Roleendpoint from "./Roleendpoint";
 import Home from "./Home";
 import "./App.css";
 import swapi from "./Swapi";
+import pagination from "./Pagination"
 
 
 
@@ -38,12 +39,16 @@ export default class LoggedIn extends Component {
                         <li id="logout">
                         <button onClick={this.props.logout}>Logout</button>
                         </li>
+                        <li>
+                            <NavLink to="/Pagination">pagination</NavLink>
+                        </li>
                     </ul>
                     <Route exact path="/"
                     render={(props) => <Home {...props} user={this.props.username} />} />
                     <Route path="/Roleendpoint" 
                     render={(props) => <Roleendpoint {...props} data={this.state.dataFromServer} />}/>
                     <Route path="/Swapi" component={swapi} />
+                    <Route path="/Pagination" component={pagination} />
                    
                 </div>
             </Router>
