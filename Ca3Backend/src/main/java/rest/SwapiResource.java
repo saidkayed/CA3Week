@@ -51,7 +51,7 @@ public class SwapiResource {
         
         ExecutorService executor = Executors.newFixedThreadPool(5);
         List<Future<String>> list = new ArrayList();
-        for(int i = 1; i < 6; i++){
+        for(int i = 1; i < 16; i++){
             Callable<String> callable = new SwapiFacade("https://swapi.co/api/people/",i);
             System.out.println("hej");
             System.out.println(callable);
@@ -60,16 +60,19 @@ public class SwapiResource {
         }
         
         StringBuilder builder = new StringBuilder();
-        builder.append('{');
+        builder.append('[');
         for (int i = 0; i < list.size(); i++) {
             String result = list.get(i).get();
                 builder.append(result);
                 if(i < list.size() -1){
+                    
                     builder.append(",");
+                    
             }
             
         }
-        builder.append('}');
+        
+        builder.append(']');
         return builder.toString();
     }
        /* 
