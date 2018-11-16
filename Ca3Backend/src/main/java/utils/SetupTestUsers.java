@@ -16,11 +16,11 @@ public class SetupTestUsers {
 
     //EntityManager em = Persistence.createEntityManagerFactory("pu").createEntityManager();
     
-    SwapiFacade sf = new SwapiFacade();
+   // SwapiFacade sf = new SwapiFacade();
     
-    ArrayList<String> json = sf.getAllSwapi();
+    //ArrayList<String> json = sf.getAllSwapi();
     
-      System.out.println(json);
+      //System.out.println(json);
             
     
     // IMPORTAAAAAAAAAANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

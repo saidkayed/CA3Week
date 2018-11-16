@@ -60,11 +60,9 @@ public class SwapiResource {
         }
         
         StringBuilder builder = new StringBuilder();
-<<<<<<< HEAD
-      
-=======
+
         builder.append('[');
->>>>>>> 9a93bbed79177f8186fd849d31da5f88e1cdde44
+
         for (int i = 0; i < list.size(); i++) {
             String result = list.get(i).get();
                 builder.append(result);
@@ -75,12 +73,10 @@ public class SwapiResource {
             }
             
         }
-<<<<<<< HEAD
-     
-=======
+
         
         builder.append(']');
->>>>>>> 9a93bbed79177f8186fd849d31da5f88e1cdde44
+
         return builder.toString();
     }
        /* 
