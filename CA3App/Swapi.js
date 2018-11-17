@@ -23,10 +23,10 @@ import {
 
     }
     async componentDidMount() {
-        const peps =  await fetch('https://swapi.co/api/people').then(res =>res.json()) //kan ikke fetche fra localhost pga http så vi fetcher fra den orginale side
+        const peps =  await fetch('http://192.168.0.5:8080/jwtbackend/api/swapi/people').then(res =>res.json()) //kan ikke fetche fra localhost pga http så vi fetcher fra den orginale side
         
 
-        this.setState({peopledata:peps.results});
+        this.setState({peopledata:peps});
 
     }
     
