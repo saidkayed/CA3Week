@@ -27,3 +27,9 @@ It contains a MySQL database with a few preset usernames and the necessary POJOs
 
 App:
 
+Clone the project from GitHub.
+Navigate to the CA3App folder and write "npm install"
+
+Then write "expo start"
+
+Make sure the backend is running.
