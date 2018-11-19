@@ -25,6 +25,9 @@ The backend is hosted at a droplet with URL: https://www.sado-net.com/ca3/
 
 It contains a MySQL database with a few preset usernames and the necessary POJOs to authenticate logins through the Frontend.
 
+Frontend:
+http://mere-rate.surge.sh/
+
 App:
 
 Ensure you have Expo installed on your phone.
