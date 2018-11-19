@@ -1,7 +1,7 @@
 # CA3Week
 
 Frontend:
-
+http://mere-rate.surge.sh/
 Before starting the frontend application one must open a terminal window and navigate to the CA3Frontend folder and write these 7 lines:
 
 npm install
@@ -24,9 +24,6 @@ Backend:
 The backend is hosted at a droplet with URL: https://www.sado-net.com/ca3/
 
 It contains a MySQL database with a few preset usernames and the necessary POJOs to authenticate logins through the Frontend.
-
-Frontend:
-http://mere-rate.surge.sh/
 
 App:
 
