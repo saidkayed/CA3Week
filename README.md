@@ -1,6 +1,7 @@
 # CA3Week
 
 Frontend:
+
 http://rebel-girls.surge.sh
 Before starting the frontend application one must open a terminal window and navigate to the CA3Frontend folder and write these 7 lines:
 
