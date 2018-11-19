@@ -14,7 +14,7 @@ npm install react-bootstrap-table2-filter
 
 npm install react-bootstrap-table2-paginator
 
-npm install dk_test_names
+npm install dk_test_names Note: this line is only necessary if you do not already have dk_test_names installed on your system.
 
 npm install json-server Note: this line is only necessary if you do not already have Json-server installed on your system.
 
@@ -27,10 +27,6 @@ It contains a MySQL database with a few preset usernames and the necessary POJOs
 
 App:
 
-Clone the project from GitHub.
+Ensure you have Expo installed on your phone.
 
-Navigate to the CA3App folder and write "npm install"
-
-Then write "expo start"
-
-Make sure the backend is running.
+Go to https://expo.io/@saiskayed/CA3App and scan the QR code with your Expo app.
